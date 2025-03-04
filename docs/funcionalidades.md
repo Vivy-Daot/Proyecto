@@ -1,6 +1,6 @@
-# Funcionalidades
+# Funcionalidades de la aplicación
 
-La siguientes es una lista de las funcionalidades disponibles para el usuario de la aplicación:
+## Restricciones técnicas
 
 1. ...
 2. ...
