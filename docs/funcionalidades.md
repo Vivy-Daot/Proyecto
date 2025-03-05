@@ -2,10 +2,12 @@
 
 ## Restricciones técnicas
 
-1. El juego en dispositivos android con sistema operativo version 6 o superior.
-2. Los assets usados en el juego seran assets free of use de itch.io o seran creados por el desarrollador principal del juego.
-3. El juego sera desarrollado en godot.
-4. 
+1. El juego funcionara en dispositivos android con sistema operativo version 6 o superior.
+   
+3. Los assets usados en el juego seran assets free of use de itch.io o seran creados por el desarrollador principal del juego.
+   
+4. El juego sera desarrollado en godot.
+   
 ## Funcionalidades de usuario
 En singularity el jugador se enfrentara a una serie de desafios en forma de peleas con jefes, a su vez el jugador contara:
 
