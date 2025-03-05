@@ -7,4 +7,4 @@ Por el momento solo se tiene la pantalla principal del juego y unos elementos ui
 
 2. Pantalla 2: Vida y retrato del personaje
 
-![screen1](images/uiC.jpg)
+![screen1](images/uiC.png)
