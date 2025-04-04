@@ -16,4 +16,4 @@ Por el momento solo se tiene la pantalla principal del juego y unos elementos ui
 4. Menu de opciones
 nota: esta pantalla esta bloqueada detras de la funcionalidad por ahora
 
-![screen1](images/opciones.png)
+![screen1](images/opciones.jpg)
