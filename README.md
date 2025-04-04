@@ -1,11 +1,6 @@
-# Nombre de la aplicación
+# Singularity
 
-Reemplace este texto con una descripción de su aplicación.
+Singularity es un videojuego hecho para dispositivos mobiles y celulares reminiceste de top down rpgs como furi, Unsighted y Chained Echoes
 
-Author: Nombre del estudiante
+Author: Daniel Santiago Posada Orozco
 
-## Referencias
-
-- [Ideas iniciales de proyecto](docs/ideas.md)
-- [Funcionalidades de la aplicación](docs/funcionalidades.md)
-- [Diseño de la interfaz de usuario](docs/ui.md)
