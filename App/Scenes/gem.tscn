@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ucyye8v6dyx"]
+
+[ext_resource type="Texture2D" uid="uid://c6h5agwucuswe" path="res://Assets/4.png" id="1_qwe3l"]
+
+[node name="gem" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(1085, 526)
+scale = Vector2(0.373958, 0.341667)
+texture = ExtResource("1_qwe3l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(1085, 526)
+scale = Vector2(0.373958, 0.341667)
+polygon = PackedVector2Array(108, -68.2, 108, 68, 105.5, 68, -1, 130.3, -3, 129.2, -3, 128.1, -108, 67.2, -108, -68.2, -3, -128.1, -3, -131.4)
