@@ -9,8 +9,7 @@ Quartz es una aplicación para tomar notas diseñada bajo la idea de darle compl
 
 ## Idea 2: Singularity (seleccionada)
 
-Singularity es un juego de acción de vista arriba abajo donde el jugador tendrá que enfrentarse a una serie de bosses en una serie de enfrentamientos haciendo uso de diversas mecánicas programadas dentro del juego, el núcleo de estas siendo un ataque, una esquiva y un parry (en el caso de que el proyecto sea demasiado grande esta serie de enfrentamientos se puede reducir a solo uno).
-- Furi
-- Rubinite
-- Unsighted
+Singularity es un juego de plataformas donde el jugador tendrá que explorar una serie de niveles haciendo uso de diversas mecánicas programadas dentro del juego, (en el caso de que el proyecto sea demasiado grande eeste se puede escalar reduciendo el numero de niveles).
+- Astlibra
+- Celeste
 
