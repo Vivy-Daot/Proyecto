@@ -34,13 +34,13 @@ jobs:
         run: |
           ./godot --headless --export-release "Android" build/android/game.apk
 
-      - name: 📤 Upload EXE
+      - name: 📤 Upload Windows EXE
         uses: actions/upload-artifact@v3
         with:
           name: Windows Game
           path: build/windows/game.exe
 
-      - name: 📤 Upload APK
+      - name: 📤 Upload Android APK
         uses: actions/upload-artifact@v3
         with:
           name: Android Game
