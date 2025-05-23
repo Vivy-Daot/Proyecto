@@ -19,13 +19,13 @@ jobs:
       - name: Set up Godot (GDScript)
         uses: chickensoft-games/setup-godot@v1
         with:
-          version: 4.2.1
+          version: 4.2.1 # Your Godot version
           export-templates: true
           headless: true
 
       - name: Build Windows (GDScript)
         run: |
-          cd App
+          cd App # Navigate into the App directory
           mkdir -p build/windows
           godot --headless --export-release "Windows Desktop" build/windows/game.exe
 
@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: App/build/windows/game.exe # Only upload the .exe file
+          path: App/ # Adjust path to include App
 
   build-android:
     runs-on: ubuntu-latest
@@ -46,19 +46,18 @@ jobs:
       - name: Set up Godot (GDScript)
         uses: chickensoft-games/setup-godot@v1
         with:
-          version: 4.2.1
+          version: 4.2.1 # Your Godot version
           export-templates: true
           headless: true
 
       - name: Build Android (GDScript)
         run: |
-          cd App
-          mkdir -p build/android
-          godot --headless --export-release "Android" build/android/game.apk
+          cd App 
+          mkdir  build/android
+          godot --export-release "Android" build/android/game.apk
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: App/build/android/game.apk # Only upload the .apk file
-
+          path: App/ # Adjust path to include App
