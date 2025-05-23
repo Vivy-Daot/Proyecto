@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: App/build/windows/game.exe
+          path: build/windows/game.exe
 
   build-android:
     runs-on: ubuntu-latest
@@ -68,4 +68,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: App/build/android/game.apk
+          path: build/android/game.apk
