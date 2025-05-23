@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Windows (GDScript)
         run: |
-          cd App # Navigate into the App directory
+          cd App
           mkdir -p build/windows
           godot --headless --export-release "Windows Desktop" build/windows/game.exe
 
@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: App/build/windows/game.exe # Adjust path to include App
+          path: App/build/windows/game.exe
 
   build-android:
     runs-on: ubuntu-latest
@@ -47,17 +47,17 @@ jobs:
         uses: chickensoft-games/setup-godot@v1
         with:
           version: 4.2.1 # Your Godot version
-          export-templates: true
+          export-templates: true # Ensure templates are downloaded
           headless: true
 
       - name: Build Android (GDScript)
         run: |
-          cd App # Navigate into the App directory
+          cd App
           mkdir -p build/android
-          godot --headless --export-release "Android" build/android/game.apk
+          godot --headless --export "Android" build/android/game.apk # Use the non-release export to be explicit
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: App/build/android/game.apk # Adjust path to include App
+          path: App/build/android/game.apk
