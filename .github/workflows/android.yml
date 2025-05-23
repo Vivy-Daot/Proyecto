@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-desktop:
+  build-windows:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,16 +16,20 @@ jobs:
         with:
           lfs: true
 
-      - name: Set up Godot (GDScript)
+      - name: Set up Godot
         uses: chickensoft-games/setup-godot@v1
         with:
-          version: 4.2.1 # Your Godot version
+          version: 4.2.1
           export-templates: true
           headless: true
+          mono: false  # 🔁 IMPORTANT: Use non-Mono version
 
-      - name: Build Windows (GDScript)
+      - name: Debug: Show project structure
+        run: ls -R
+
+      - name: Build Windows
         run: |
-          cd App # Navigate into the App directory
+          cd App
           mkdir -p build/windows
           godot --headless --export-release "Windows Desktop" build/windows/game.exe
 
@@ -33,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: App/ # Adjust path to include App
+          path: App/build/windows/game.exe
 
   build-android:
     runs-on: ubuntu-latest
@@ -43,21 +47,25 @@ jobs:
         with:
           lfs: true
 
-      - name: Set up Godot (GDScript)
+      - name: Set up Godot
         uses: chickensoft-games/setup-godot@v1
         with:
-          version: 4.2.1 # Your Godot version
+          version: 4.2.1
           export-templates: true
           headless: true
+          mono: false
 
-      - name: Build Android (GDScript)
+      - name: Debug: Show project structure
+        run: ls -R
+
+      - name: Build Android
         run: |
           cd App
-          mkdir  build/
-          godot --export-release "Android" build/game.apk
+          mkdir -p build/android
+          godot --headless --export-release "Android" build/android/game.apk
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: App/build/ # Adjust path to include App
+          path: App/build/android/game.apk
