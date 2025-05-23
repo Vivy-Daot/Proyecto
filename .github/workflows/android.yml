@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: App/build/windows/game.exe # Adjust path to include App
+          path: App/ # Adjust path to include App
 
   build-android:
     runs-on: ubuntu-latest
@@ -54,10 +54,10 @@ jobs:
         run: |
           cd App # Navigate into the App directory
           mkdir -p build/android
-          godot --headless --export-release "Android (Ejecutable)" build/android/game.apk
+          godot --headless --export-release "Android" build/android/game.apk
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: App/build/android/game.apk # Adjust path to include App
+          path: App/ # Adjust path to include App
