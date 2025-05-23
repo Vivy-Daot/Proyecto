@@ -1,67 +1,3 @@
-name: Export Godot Windows Build
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  export-windows:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Set up Godot
-      uses: chickensoft-games/setup-godot@v1
-      with:
-        version: 3.5.1  # change this if you're using a different Godot version
-        export-templates: true
-        headless: true
-
-    - name: Export Windows Desktop
-      run: |
-        mkdir -p build/windows
-        godot --headless --export-release \"Windows Desktop\" build/windows/game.exe
-
-    - name: Upload Windows EXE
-      uses: actions/upload-artifact@v4
-      with:
-        name: windows-build
-        path: build/windows/game.exe
-✅ What to Check in Your Godot Project
-In Godot > Project > Export, make sure you have a preset called Windows Desktop.
-
-Make sure your preset path ends in .exe, like build/windows/game.exe.
-
-Would you like me to automatically check and modify your export_presets.cfg file if you upload it? Or I can help generate a valid one for you.
-
-
-
-
-
-
-Dijiste:
-I need both an Androing and Windows export
-
-
-ChatGPT dijo:
-Perfect! If you want to export both Android (.apk) and Windows (.exe) builds, your GitHub Actions workflow needs to:
-
-Set up Godot with export templates.
-
-Export both platforms using the correct preset names (defined in export_presets.cfg).
-
-Upload both files as build artifacts.
-
-✅ Complete GitHub Actions Workflow (Windows + Android)
-Here’s an updated and fully working workflow that builds both .exe and .apk files:
-
-yaml
-Copiar
-Editar
 name: Export Godot Game (Windows + Android)
 
 on:
@@ -93,7 +29,7 @@ jobs:
     - name: Export for Android
       run: |
         mkdir -p build/android
-        godot --headless --export-release \"Android (Ejecutable)\" build/android/game.apk
+        godot --headless --export-release \"Android\" build/android/game.apk
 
     - name: Upload Windows EXE
       uses: actions/upload-artifact@v4
