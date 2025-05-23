@@ -19,7 +19,7 @@ jobs:
     - name: Set up Godot
       uses: godot-hub/github-action-godot@v3
       with:
-        godot_version: 4.x # Replace with your Godot version
+        godot_version: 4.2.1 # Replace with your Godot version
         export_templates: android
 
     - name: Cache Android build
