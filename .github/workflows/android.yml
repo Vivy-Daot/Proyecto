@@ -1,47 +1,62 @@
-name: Export Godot Game (Windows & Android)
+name: Godot Multi-Platform CI (GDScript)
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-  export:
-    name: Export EXE & APK
+  build-desktop:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
 
-      - name: 📦 Download Godot (Standard build, not Mono)
-        run: |
-          wget https://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_linux.x86_64.zip
-          unzip Godot_v4.2.1-stable_linux.x86_64.zip
-          mv Godot_v4.2.1-stable_linux.x86_64 godot
-          chmod +x godot
+      - name: Set up Godot (GDScript)
+        uses: chickensoft-games/setup-godot@v1
+        with:
+          version: 4.2.1 # Your Godot version
+          export-templates: true
+          headless: true
 
-      - name: 📁 Create Export Folders
+      - name: Build Windows (GDScript)
         run: |
           mkdir -p build/windows
-          mkdir -p build/android
+          godot --headless --export-release "Windows Desktop" build/windows/game.exe
 
-      - name: 🚀 Export Windows EXE
-        run: |
-          ./godot --headless --export-release "Windows Desktop" build/windows/game.exe
-
-      - name: 📱 Export Android APK
-        run: |
-          ./godot --headless --export-release "Android" build/android/game.apk
-
-      - name: 📤 Upload Windows EXE
-        uses: actions/upload-artifact@v3
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: Windows Game
+          name: windows-build
           path: build/windows/game.exe
 
-      - name: 📤 Upload Android APK
-        uses: actions/upload-artifact@v3
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          name: Android Game
+          lfs: true
+
+      - name: Set up Godot (GDScript)
+        uses: chickensoft-games/setup-godot@v1
+        with:
+          version: 4.2.1 # Your Godot version
+          export-templates: true
+          headless: true
+
+      - name: Build Android (GDScript)
+        run: |
+          mkdir -p build/android
+          godot --headless --export-release "Android" build/android/game.apk
+
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-build
           path: build/android/game.apk
+
