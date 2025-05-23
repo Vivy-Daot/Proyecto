@@ -28,7 +28,7 @@ jobs:
         run: |
           cd App
           mkdir -p build/windows
-          godot --headless --export-release "Windows Desktop"
+          godot --headless --export-release "Windows Desktop" build/android/game.exe
 
       - name: Upload Windows Artifact
         uses: actions/upload-artifact@v4
@@ -56,9 +56,7 @@ jobs:
         run: |
           cd App
           mkdir -p build/android
-          godot --headless --export-release "Android" || true
-          echo "=== Listing contents of build/android ==="
-          ls -l build/android
+          godot --headless --export-release "Android" build/android/game.apk
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
