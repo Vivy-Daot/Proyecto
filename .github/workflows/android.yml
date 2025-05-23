@@ -54,13 +54,10 @@ jobs:
         run: |
           cd App # Navigate into the App directory
           mkdir -p build/android
-          godot --headless --export-release "Android " build/android/game.apk
+          godot --headless --export-release "Android" build/android/game.apk
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-build
           path: App/ # Adjust path to include App
-        with:
-          name: android-build
-          path: App/build/android/game.apk
