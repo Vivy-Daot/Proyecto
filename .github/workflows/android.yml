@@ -55,7 +55,7 @@ jobs:
           headless: true
           mono: false
 
-      - name: Debug: Show project structure
+      - name:  Show project structure
         run: ls -R
 
       - name: Build Android
