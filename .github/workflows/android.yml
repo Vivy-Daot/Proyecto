@@ -24,7 +24,7 @@ jobs:
           headless: true
           mono: false  # 🔁 IMPORTANT: Use non-Mono version
 
-      - name: Debug: Show project structure
+      - name: Show project structure
         run: ls -R
 
       - name: Build Windows
