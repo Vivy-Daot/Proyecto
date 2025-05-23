@@ -25,6 +25,7 @@ jobs:
 
       - name: Build Windows (GDScript)
         run: |
+          cd App # Navigate into the App directory
           mkdir -p build/windows
           godot --headless --export-release "Windows Desktop" build/windows/game.exe
 
@@ -32,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: build/windows/game.exe
+          path: App/build/windows/game.exe # Adjust path to include App
 
   build-android:
     runs-on: ubuntu-latest
@@ -51,6 +52,7 @@ jobs:
 
       - name: Build Android (GDScript)
         run: |
+          cd App # Navigate into the App directory
           mkdir -p build/android
           godot --headless --export-release "Android" build/android/game.apk
 
@@ -58,5 +60,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: build/android/game.apk
-
+          path: App/build/android/game.apk # Adjust path to include App
