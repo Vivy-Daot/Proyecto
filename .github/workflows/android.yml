@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: build/windows/game.exe
+          path: build/windows/
 
   build-android:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
           mono: false
 
       - name: Build Android
-        run: |
+        run: 
           cd App
           mkdir -p build/android
           godot --headless --export-release "Android" build/android/game.apk
@@ -62,5 +62,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: build/android/game.apk
+          path: build/android/
 
