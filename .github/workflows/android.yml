@@ -66,5 +66,3 @@ jobs:
           name: android-build
           path: App/build/android/game.apk
 
-          name: android-build
-          path: build/android/game.apk
