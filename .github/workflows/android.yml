@@ -17,7 +17,7 @@ jobs:
         lfs: true
 
     - name: Set up Godot
-      uses: godot-hub/github-action-godot@v3
+      uses: godot-hub/github-action-godot@v3.1
       with:
         godot_version: 4.2.1 # Replace with your Godot version
         export_templates: android
@@ -50,7 +50,7 @@ jobs:
         lfs: true
 
     - name: Set up Godot
-      uses: godot-hub/github-action-godot@v3
+      uses: godot-hub/github-action-godot@v3.1
       with:
         godot_version: 4.2.1 
         export_templates: windows
