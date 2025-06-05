@@ -23,5 +23,5 @@
 
 6. Controles para movil
 
-![screen1](images/Controles.png)
+![screen1](images/Contoles.png)
 
