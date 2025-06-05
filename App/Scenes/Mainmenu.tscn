@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bay18ifeqxief"]
+
+[ext_resource type="Script" path="res://Scenes/Mainmenu.gd" id="1_w34fu"]
+[ext_resource type="Texture2D" uid="uid://btkxogicm8u7i" path="res://Assets/Singularity.png" id="2_tnlcg"]
+
+[node name="Mainmenu" type="Node"]
+script = ExtResource("1_w34fu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 3.0
+offset_right = 9.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_tnlcg")
+expand_mode = 3
+
+[node name="Iniciar" type="Button" parent="."]
+offset_left = 125.0
+offset_top = 412.0
+offset_right = 383.0
+offset_bottom = 503.0
+metadata/_edit_group_ = true
+
+[node name="Quitar" type="Button" parent="."]
+offset_left = 740.0
+offset_top = 412.0
+offset_right = 998.0
+offset_bottom = 503.0
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Quitar" to="." method="_on_quitar_pressed"]
