@@ -1,8 +1,6 @@
 # Singularity
 
-Singularity es un videojuego hecho para dispositivos mobiles y celulares reminiceste de top down rpgs como furi, Unsighted y Chained Echoes
-
-(POR AHORA SOLO ESTA DISPONIBLE EL .EXE PARA WINDOWS)
+Singularity es un videojuego de plataformas hecho para dispositivos moviles y computadores reminicente de juegos como Astlibra, Celeste y Sonic Mania.
 
 Author: Daniel Santiago Posada Orozco
 
